@@ -22,8 +22,7 @@ pig_points = [(300,300),(400,50),(100, 200),(350,350),(450,450)]
 pig1=canvas.create_image(pig_points[0][0],pig_points[0][1],image=pig)
 pig2=canvas.create_image(pig_points[1][0],pig_points[1][1],image=pig)
 pig3=canvas.create_image(pig_points[2][0],pig_points[2][1],image=pig)
-pig4=canvas.create_image(pig_points[3][0],pig_points[3][1],image=pig)
-pig5=canvas.create_image(pig_points[4][0],pig_points[4][1],image=pig)
+
 
 # endpoints of band (line)
 p1=(216, 176)
@@ -102,21 +101,7 @@ def shoot(event):
     for point in point_list:
         canvas.delete(on_canvas)
         on_canvas = canvas.create_image(point[0], point[1], image=bird)
-        if abs(point[0]-pig_points[0][0]) < 20 and abs(point[1]-pig_points[0][1]) < 20 :
-            if not pig1bool:
-                canvas.delete(pig1)
-                score += 10
-                pig1bool = True
-        if abs(point[0]-pig_points[1][0]) < 20 and abs(point[1]-pig_points[1][1]) < 20 :
-            if not pig2bool:
-                canvas.delete(pig2)
-                score += 10
-                pig2bool = True
-        if abs(point[0]-pig_points[2][0]) < 20 and abs(point[1]-pig_points[2][1]) < 20 :
-            if not pig3bool:
-                canvas.delete(pig3)
-                score += 10
-                pig3bool = True
+        
         if abs(point[0] - pig_points[3][0]) < 20 and abs(point[1] - pig_points[3][1]) < 20:
             if not pig4bool:
                 canvas.delete(pig4)
